@@ -33,17 +33,18 @@ var createNewTaskElement=function(taskString){
     var deleteButtonImg=document.createElement('img');//delete button image
 
     label.innerText=taskString;
-    label.className='task';
+    label.className='task incomplete-tasks__label';
 
     //Each elements, needs appending
     checkBox.type='checkbox';
+    checkBox.className='checkbox'
     editInput.type='text';
-    editInput.className='task';
+    editInput.className='task incomplete-tasks__input';
 
     editButton.innerText='Edit'; //innerText encodes special characters, HTML does not.
-    editButton.className='edit';
+    editButton.className='edit button';
 
-    deleteButton.className='delete';
+    deleteButton.className='delete button';
     deleteButtonImg.src='./remove.svg';
     deleteButtonImg.setAttribute('alt', 'remove button');
     deleteButton.appendChild(deleteButtonImg);
@@ -55,6 +56,7 @@ var createNewTaskElement=function(taskString){
     listItem.appendChild(editInput);
     listItem.appendChild(editButton);
     listItem.appendChild(deleteButton);
+    listItem.className='incomplete-tasks__item'
     return listItem;
 }
 
@@ -83,7 +85,7 @@ var editTask=function(){
 
     var listItem=this.parentNode;
 
-    var editInput=listItem.querySelector('input.task');
+    var editInput=listItem.querySelector('.incomplete-tasks__input');
     var label=listItem.querySelector('label');
     var editBtn=listItem.querySelector('.edit');
     var containsClass=listItem.classList.contains('incomplete-tasks__item_edit-mode');
