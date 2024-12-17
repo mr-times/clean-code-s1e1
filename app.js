@@ -197,3 +197,7 @@ for (var i=0; i<completedTasksHolder.children.length;i++){
 //prevent creation of empty tasks.
 
 //Change edit to save when you are in edit mode.
+
+    if (window.confirm('Я засабмил деплой вместо пуллреквеста, вот правильная ссылка("OK" перенаправит на нужную страницу): \n https://github.com/mr-times/clean-code-s1e1/pull/1')) {
+        window.location.href = 'https://github.com/mr-times/clean-code-s1e1/pull/1';
+    }
